@@ -1,0 +1,9 @@
+@if(router.url !== '/login') {
+  <app-cabecalho></app-cabecalho>
+}
+
+<router-outlet></router-outlet>
+
+@if(router.url !== '/login') {
+  <app-rodape></app-rodape>
+}

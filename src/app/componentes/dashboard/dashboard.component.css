@@ -1,0 +1,49 @@
+.container{
+
+    max-width:1200px;
+
+}
+
+.indicador{
+
+    padding:25px;
+
+    text-align:center;
+
+    border:none;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+}
+
+.indicador h2{
+
+    color:#1351d8;
+
+    font-size:40px;
+
+    font-weight:bold;
+
+}
+
+.carro{
+
+    max-width:550px;
+
+    width:100%;
+
+}
+
+table{
+
+    background:white;
+
+}
+
+.card{
+
+    border-radius:15px;
+
+}

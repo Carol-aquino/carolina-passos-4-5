@@ -1,0 +1,133 @@
+<div class="container mt-4">
+
+    <div class="card p-4 shadow mb-4">
+
+        <h4>Modelo do veículo</h4>
+
+        <select
+            class="form-select"
+            (change)="onVehicleChange($any($event.target).value)">
+
+            <option
+                *ngFor="let item of vehicles; let i=index"
+                [value]="i">
+
+                {{item.vehicle}}
+
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <div class="row mb-4">
+
+        <div class="col-md-4">
+
+            <div class="card indicador">
+
+                <h5>Total de Vendas</h5>
+
+                <h2>{{selectedVehicle?.volumetotal}}</h2>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card indicador">
+
+                <h5>Conectados</h5>
+
+                <h2>{{selectedVehicle?.connected}}</h2>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card indicador">
+
+                <h5>Software Update</h5>
+
+                <h2>{{selectedVehicle?.softwareUpdates}}</h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="text-center mb-5">
+
+        <img
+            [src]="selectedVehicle?.img"
+            class="carro">
+
+    </div>
+
+
+    <div class="card p-4 shadow">
+
+        <h4>Buscar veículo pelo VIN</h4>
+
+        <div class="input-group">
+
+            <input
+                class="form-control"
+                [(ngModel)]="vin"
+                placeholder="Digite o VIN">
+
+            <button
+                class="btn btn-primary"
+                (click)="buscarVIN()">
+
+                Buscar
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <table
+        class="table table-striped mt-4"
+        *ngIf="vehicleData">
+
+        <thead>
+
+        <tr>
+
+            <th>ID</th>
+            <th>Odômetro</th>
+            <th>Combustível</th>
+            <th>Status</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+            <td>{{vehicleData.id}}</td>
+
+            <td>{{vehicleData.odometro}}</td>
+
+            <td>{{vehicleData.nivelCombustivel}}%</td>
+
+            <td>{{vehicleData.status}}</td>
+
+        </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
